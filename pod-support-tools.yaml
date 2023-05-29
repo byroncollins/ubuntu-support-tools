@@ -1,0 +1,9 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: support-tools
+spec:
+  containers:
+    - name: support-tools
+      image: byroncollins/ubuntu-support-tools:latest
+      command: ["/bin/sh", "-c", "tail -f /dev/null"]
