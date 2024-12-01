@@ -8,7 +8,7 @@ RUN sed -i 's/#force_color_prompt=yes/force_color_prompt=yes/' /root/.bashrc && 
 # DL3008 warning: Pin versions in apt get install. Instead of `apt-get install <package>` use `apt-get install <package>=<version>`
 # hadolint ignore=DL3008 
 RUN DEBIAN_FRONTEND=noninteractive \
-    apt-get update && apt-get install --no-install-recommends -y ca-certificates less man manpages-posix vim jq net-tools iproute2 netcat dnsutils curl iputils-ping iptables nmap tcpdump openssl && \
+    apt-get update && apt-get install --no-install-recommends -y ca-certificates less man manpages-posix vim jq net-tools iproute2 netcat-openbsd dnsutils curl iputils-ping iptables nmap tcpdump openssl && \
     rm -rf /var/lib/apt/lists/*
 
 RUN useradd -ms /bin/bash default && \
